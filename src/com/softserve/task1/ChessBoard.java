@@ -1,57 +1,36 @@
 package com.softserve.task1;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChessBoard {
 
-    private int width;
-    private int height;
+    private List<ChessField> playField = new ArrayList<>();
+    private ChessField size;
 
 
-    private ChessBoard(int width, int height) throws IllegalArgumentException{
-        if (width <= 0 || height <=0){
-            throw new IllegalArgumentException();
-        }
-        this.width = width;
-        this.height = height;
-        for (int w = 0; w < width; w++) {
-            for (int h = 0; h < height; h++) {
-                if ((w + h) % 2 == 0){
-                    System.out.print("*");
-                } else System.out.print(" ");
+    private ChessBoard() {}
+
+    public static ChessBoard create(ChessField size) {
+        ChessBoard result = new ChessBoard();
+        result.size = size;
+        for (int w = 0; w < size.getWidth(); w++) {
+            for (int h = 0; h < size.getHeight(); h++) {
+                result.playField.add(new ChessField(w, h));
             }
-            System.out.println();
         }
-    }
-
-    public static ChessBoard create() {
-        int width;
-        int height;
-        boolean continueLoop = true;
-        ChessBoard result = null;
-        System.out.println("This program displays a chessboard with the given dimensions of width and height.");
-        do {
-            Scanner scanner = new Scanner(System.in);
-            try {
-                System.out.println("Please enter the width of the board");
-                width = scanner.nextInt();
-                System.out.println("Please enter the height of the board");
-                height = scanner.nextInt();
-                result = new ChessBoard(width, height);
-                continueLoop = false;
-            } catch (InputMismatchException e) {
-                System.out.println("Only integer values allowed");
-            } catch (IllegalArgumentException e){
-                System.out.println("Board size must be greater then zero");
-            }
-        } while (continueLoop);
         return result;
     }
 
-    public static void main(String[] args) {
-        ChessBoard.create();
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        for (int w = 0; w < this.size.getWidth(); w++) {
+            for (int h = 0; h < this.size.getHeight(); h++) {
+                result.append(playField.get(w + h));
+            }
+            result.append("\n");
+        }
+        return new String(result);
     }
-
-
 }
