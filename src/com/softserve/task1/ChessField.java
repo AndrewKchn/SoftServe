@@ -29,6 +29,6 @@ public class ChessField {
 
     @Override
     public String toString() {
-        return this.collor;
+        return collor;//"w"+width + "h"+height + "\n";
     }
 }

@@ -11,8 +11,9 @@ public class Display {
     }
 
     public static void showChessBoard(ChessBoard cb){
-        System.out.println(cb);
+        System.out.println(cb);;
     }
+
 
     public static void showEnd(){
         System.out.println("Thank you. Bye.");
