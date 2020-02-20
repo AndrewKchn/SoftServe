@@ -12,11 +12,7 @@ public class ChessBoard {
     private ChessBoard() {
     }
 
-    public ChessField getSize() {
-        return size;
-    }
-
-    public static ChessBoard create(ChessField size) {
+    static ChessBoard create(ChessField size) {
         ChessBoard result = new ChessBoard();
         result.size = size;
         for (int h = 0; h < size.getWidth(); h++) {
@@ -30,12 +26,8 @@ public class ChessBoard {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-//        for (ChessField c:playField){
-//            result.append(c);
-//        }
-
         for (ChessField c : playField) {
-            if (c.getWidth() == size.getWidth() - 1) result.append(c + "\n");
+            if (c.getWidth() == size.getWidth() - 1) result.append(c).append("\n");
             else result.append(c);
         }
         return new String(result);

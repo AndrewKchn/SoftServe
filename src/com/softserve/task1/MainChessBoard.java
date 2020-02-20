@@ -6,5 +6,6 @@ public class MainChessBoard {
         Display.showInfo();
         ChessBoard chessBoard = ChessBoard.create(InputData.chessBoardInputParam());
         Display.showChessBoard(chessBoard);
+        Display.showEnd();
     }
 }

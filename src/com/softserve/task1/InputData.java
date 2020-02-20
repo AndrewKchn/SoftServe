@@ -2,7 +2,7 @@ package com.softserve.task1;
 
 import java.util.Scanner;
 
-public class InputData {
+class InputData {
 
    private static boolean dataIsCorrect(String inputDate){
         int data;
@@ -14,19 +14,19 @@ public class InputData {
         return (data > 0);
     }
 
-    static public int consoleDataInput(){
-        String data;
+    static int consoleDataInput(){
+        String consoleIn;
         Scanner scanner = new Scanner(System.in);
         do {
-            data = scanner.nextLine();
-            if (!dataIsCorrect(data)){
-                Display.showParamInfo();
+            consoleIn = scanner.nextLine();
+            if (!dataIsCorrect(consoleIn)){
+                Display.showErrorInfo();
             }
-        } while (!dataIsCorrect(data));
-        return Integer.parseInt(data);
+        } while (!dataIsCorrect(consoleIn));
+        return Integer.parseInt(consoleIn);
     }
 
-    public static ChessField chessBoardInputParam(){
+    static ChessField chessBoardInputParam(){
         System.out.println("Please enter a board width.");
         int weight = consoleDataInput();
         System.out.println("Please enter a board height.");
