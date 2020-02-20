@@ -15,4 +15,10 @@ Lucky tickets.
 каждого способа подсчёта.
 */
 public class MainTicket {
+    public static void main(String[] args) {
+        Display.showInfo();
+        CounterOfLuckyTicket counter = CounterOfLuckyTicket.create();
+        counter.getResult();
+        Display.showEnd();
+    }
 }

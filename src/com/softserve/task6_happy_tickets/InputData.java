@@ -6,16 +6,14 @@ import java.util.Scanner;
 
 public class InputData {
 
-    private static final String ERROR_MASSAGE = "Invalid entry for ticket number.\n" +
-            "The ticket number should be only six integer values.";
-
     private static String inputData() {
         Scanner scanner = new Scanner(System.in);
         String validData;
         do {
+            Display.showMessage();
             validData = scanner.nextLine();
             if (!DataValidator.isCorrectForTicket(validData)) {
-                System.out.println(ERROR_MASSAGE);
+                Display.showErrorInfo();
             }
         } while (!DataValidator.isCorrectForTicket(validData));
         return validData;
