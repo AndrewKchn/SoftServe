@@ -19,8 +19,6 @@ public class CounterOfLuckyTicket {
         difficultWay = countDifficultWay();
     }
 
-
-
     static CounterOfLuckyTicket create(){
         List<Ticket> result = InputData.inputTicketsNumbers(AMOUNT_TICKETS);
         if (result.get(0).getNumber() > result.get(1).getNumber()) Collections.reverse(result);
@@ -75,15 +73,6 @@ public class CounterOfLuckyTicket {
             else oddSum += arrayNumber[i];
         }
         return evenSum == oddSum;
-    }
-
-
-
-    public static void main(String[] args) {
-        int[] array = numberToArray(4056);
-        for (int i:array){
-            System.out.println(i);
-        }
     }
 
     void getResult(){

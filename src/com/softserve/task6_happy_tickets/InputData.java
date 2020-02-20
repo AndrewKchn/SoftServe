@@ -31,7 +31,4 @@ public class InputData {
         return result;
     }
 
-    public static void main(String[] args) {
-        System.out.println(inputTicketsNumbers(2));
-    }
 }
