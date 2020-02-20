@@ -6,10 +6,6 @@ import java.util.List;
 public class Ticket {
     private int number;
 
-    public Ticket(String number) {
-        this.number = Integer.parseInt(number);
-    }
-
     public Ticket(int number) {
         this.number = number;
     }
