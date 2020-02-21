@@ -13,7 +13,6 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket№ " + number;
+        return "Ticket№ " + String.format("%06d",number);
     }
-
 }

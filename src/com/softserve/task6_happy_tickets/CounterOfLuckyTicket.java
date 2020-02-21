@@ -3,7 +3,7 @@ package com.softserve.task6_happy_tickets;
 import java.util.Collections;
 import java.util.List;
 
-public class CounterOfLuckyTicket {
+class CounterOfLuckyTicket {
     private Ticket first;
     private Ticket last;
     private int easyWay;

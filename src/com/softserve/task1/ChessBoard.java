@@ -15,8 +15,8 @@ public class ChessBoard {
     static ChessBoard create(ChessField size) {
         ChessBoard result = new ChessBoard();
         result.size = size;
-        for (int h = 0; h < size.getWidth(); h++) {
-            for (int w = 0; w < size.getHeight(); w++) {
+        for (int h = 0; h < size.getHeight(); h++) {
+            for (int w = 0; w < size.getWidth(); w++) {
                 result.playField.add(new ChessField(w,h));
             }
         }

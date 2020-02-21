@@ -1,8 +1,13 @@
 package com.softserve.task1;
 
 import java.util.Scanner;
+import com.softserve.util.Display;
 
 class InputData {
+
+    private static String ERROR_MESSAGE = "Board sizes must be integer values greater than zero. Please try again.";
+    private static String MESSAGE_WIDHT = "Please enter a board width.";
+    private static String MESSAGE_HEIGHT = "Please enter a board height.";
 
     private static boolean dataIsCorrect(String inputDate) {
         int data;
@@ -20,16 +25,16 @@ class InputData {
         do {
             consoleIn = scanner.nextLine();
             if (!dataIsCorrect(consoleIn)) {
-                Display.showErrorInfo();
+                Display.show(ERROR_MESSAGE);
             }
         } while (!dataIsCorrect(consoleIn));
         return Integer.parseInt(consoleIn);
     }
 
     static ChessField chessBoardInputParam() {
-        System.out.println("Please enter a board width.");
+        Display.show(MESSAGE_WIDHT);
         int weight = consoleDataInput();
-        System.out.println("Please enter a board height.");
+        Display.show(MESSAGE_HEIGHT);
         int height = consoleDataInput();
         return new ChessField(weight, height);
     }
